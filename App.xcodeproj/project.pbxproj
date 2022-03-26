@@ -20,7 +20,7 @@
 		E77796D427EB4164006564C0 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77796D327EB4164006564C0 /* Router.swift */; };
 		E77796D927EB4172006564C0 /* AssemblyBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77796D827EB4172006564C0 /* AssemblyBuilder.swift */; };
 		E777970427EB7F61006564C0 /* View.xib in Resources */ = {isa = PBXBuildFile; fileRef = E777970327EB7F61006564C0 /* View.xib */; };
-		E777971127EC7287006564C0 /* NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E777971027EC7287006564C0 /* NavigationBar.swift */; };
+		E79B274327EF7D6200DA72AC /* UserLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79B274227EF7D6200DA72AC /* UserLocationManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,7 +60,7 @@
 		E77796D327EB4164006564C0 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		E77796D827EB4172006564C0 /* AssemblyBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssemblyBuilder.swift; sourceTree = "<group>"; };
 		E777970327EB7F61006564C0 /* View.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = View.xib; sourceTree = "<group>"; };
-		E777971027EC7287006564C0 /* NavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBar.swift; sourceTree = "<group>"; };
+		E79B274227EF7D6200DA72AC /* UserLocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLocationManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,10 +111,14 @@
 		E777966527EB3FDB006564C0 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				E79B274127EF7D1700DA72AC /* Interact + Feature */,
+				E79B273F27EF7CB100DA72AC /* AssemblyBuilder */,
+				E79B273E27EF7C9000DA72AC /* Router */,
 				E77796CF27EB4131006564C0 /* Other */,
 				E77796CE27EB4128006564C0 /* Applications */,
 				E777969E27EB403D006564C0 /* MainModule */,
 				E777967427EB3FDF006564C0 /* Info.plist */,
+				E79B274027EF7CD800DA72AC /* SecondModule */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -177,8 +181,6 @@
 			children = (
 				E777966627EB3FDB006564C0 /* AppDelegate.swift */,
 				E777966827EB3FDB006564C0 /* SceneDelegate.swift */,
-				E77796D327EB4164006564C0 /* Router.swift */,
-				E77796D827EB4172006564C0 /* AssemblyBuilder.swift */,
 			);
 			path = Applications;
 			sourceTree = "<group>";
@@ -189,9 +191,39 @@
 				E777966C27EB3FDB006564C0 /* Main.storyboard */,
 				E777966F27EB3FDF006564C0 /* Assets.xcassets */,
 				E777967127EB3FDF006564C0 /* LaunchScreen.storyboard */,
-				E777971027EC7287006564C0 /* NavigationBar.swift */,
 			);
 			path = Other;
+			sourceTree = "<group>";
+		};
+		E79B273E27EF7C9000DA72AC /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				E77796D327EB4164006564C0 /* Router.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		E79B273F27EF7CB100DA72AC /* AssemblyBuilder */ = {
+			isa = PBXGroup;
+			children = (
+				E77796D827EB4172006564C0 /* AssemblyBuilder.swift */,
+			);
+			path = AssemblyBuilder;
+			sourceTree = "<group>";
+		};
+		E79B274027EF7CD800DA72AC /* SecondModule */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SecondModule;
+			sourceTree = "<group>";
+		};
+		E79B274127EF7D1700DA72AC /* Interact + Feature */ = {
+			isa = PBXGroup;
+			children = (
+				E79B274227EF7D6200DA72AC /* UserLocationManager.swift */,
+			);
+			path = "Interact + Feature";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -328,11 +360,11 @@
 				E777966B27EB3FDB006564C0 /* ViewController.swift in Sources */,
 				E77796CA27EB4123006564C0 /* Coordination.swift in Sources */,
 				E777966727EB3FDB006564C0 /* AppDelegate.swift in Sources */,
-				E777971127EC7287006564C0 /* NavigationBar.swift in Sources */,
 				E77796C227EB4118006564C0 /* Presenter.swift in Sources */,
 				E77796D427EB4164006564C0 /* Router.swift in Sources */,
 				E77796D927EB4172006564C0 /* AssemblyBuilder.swift in Sources */,
 				E777966927EB3FDB006564C0 /* SceneDelegate.swift in Sources */,
+				E79B274327EF7D6200DA72AC /* UserLocationManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

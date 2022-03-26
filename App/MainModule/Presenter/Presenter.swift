@@ -14,9 +14,12 @@ protocol MainViewProtocol : class {
 protocol MainViewPresenterProtocol : class {
     init(view : MainViewProtocol, router : RouterProtocol )
     func search(searchRequest : String?, map : MKMapView )
+    func addGeo(map : MKMapView)
     func tap(coordinate : CoordinationModel?)
 }
 class MainPresenter : MainViewPresenterProtocol {
+
+    
     weak var view : MainViewProtocol?
     var router : RouterProtocol?
     
@@ -25,6 +28,23 @@ class MainPresenter : MainViewPresenterProtocol {
         self.view = view
         self.router = router
     }
+    func addGeo(map : MKMapView) {
+        UserLocationManager.shared.getUserLocation{location in
+            DispatchQueue.main.async {
+                let delAnnottion = map.annotations
+                map.removeAnnotations(delAnnottion)
+                let annotation = MKPointAnnotation()
+                annotation.coordinate = location.coordinate
+                map.setRegion(MKCoordinateRegion(center: location.coordinate, span: MKCoordinateSpan(latitudeDelta: 0.7, longitudeDelta: 0.7)), animated: true)
+                annotation.title = "You are here"
+                map.addAnnotation(annotation)
+            }
+        }
+    }
+    
+    
+    
+    
     func search(searchRequest: String?, map : MKMapView) {
         let search = MKLocalSearch.Request()
         search.naturalLanguageQuery = searchRequest
@@ -49,9 +69,10 @@ class MainPresenter : MainViewPresenterProtocol {
                 print("Done")
             }
         })
-       
-        
     }
+    
+    
+    
     func tap(coordinate: CoordinationModel?) {
         router?.showSecondVC(coordination: coordinate)
     }

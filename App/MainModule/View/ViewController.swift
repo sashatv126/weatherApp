@@ -17,33 +17,38 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
      
     override func viewDidLoad() {
         super.viewDidLoad()
+        presenter?.addGeo(map: map)
        
         gesterSeting()
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: false)
+    }
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: true)
+    }
     @IBAction func buttonTap(_ sender: Any) {
         let searchController = UISearchController(searchResultsController: nil)
+        searchController.searchBar.backgroundColor = .black
+        searchController.searchBar.layer.cornerRadius = 0
         searchController.searchBar.delegate = self
         present(searchController,animated: true,completion: nil)
-        print(map.annotations.first?.coordinate.latitude)
-        print(map.annotations.first?.coordinate.longitude)
-        
     }
     @objc private func get(_ sender: UILongPressGestureRecognizer) {
         let delAnnottion = map.annotations
         map.removeAnnotations(delAnnottion)
-    
         let location = sender.location(in: map)
             let coordinate = map.convert(location, toCoordinateFrom: map)
             let annotation = MKPointAnnotation()
             annotation.coordinate = coordinate
             print(coordinate)
-        
             map.addAnnotation(annotation)
     }
-    
     private func gesterSeting() {
         let  longPressRecognizer = UILongPressGestureRecognizer(target: self,
-                                                                        action: #selector(get))
+                                                                action: #selector(get))
         longPressRecognizer.minimumPressDuration = 0.5
         longPressRecognizer.delegate = self
         map.addGestureRecognizer(longPressRecognizer)
