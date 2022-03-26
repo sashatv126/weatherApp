@@ -20,13 +20,12 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="8Mw-7d-YXp">
+                <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="8Mw-7d-YXp">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <gestureRecognizers/>
                 </mapView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="zOR-0h-Mre">
-                    <rect key="frame" x="326" y="802" width="80" height="43"/>
+                    <rect key="frame" x="326" y="802" width="68" height="43"/>
                     <autoresizingMask key="autoresizingMask" heightSizable="YES"/>
                     <gestureRecognizers/>
                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
@@ -37,14 +36,35 @@
                         <action selector="buttonTap:" destination="-1" eventType="touchUpInside" id="nfV-Ia-987"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B7b-x1-U9C">
+                    <rect key="frame" x="20" y="802" width="55" height="43"/>
+                    <state key="normal">
+                        <imageReference key="image" image="paperplane.fill" catalog="system" symbolScale="large"/>
+                    </state>
+                    <connections>
+                        <action selector="GPSButton:" destination="-1" eventType="touchUpInside" id="gnb-ul-gC0"/>
+                    </connections>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="B7b-x1-U9C" secondAttribute="bottom" constant="17" id="1Xy-sR-QcK"/>
+                <constraint firstItem="zOR-0h-Mre" firstAttribute="leading" secondItem="B7b-x1-U9C" secondAttribute="trailing" constant="251" id="7hq-jw-FUd"/>
+                <constraint firstItem="B7b-x1-U9C" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="AwM-ZF-pQ3"/>
+                <constraint firstItem="8Mw-7d-YXp" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="Uia-nF-d6v"/>
+                <constraint firstItem="8Mw-7d-YXp" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="gA1-O8-HeJ"/>
+                <constraint firstAttribute="bottom" secondItem="8Mw-7d-YXp" secondAttribute="bottom" id="inY-uW-bkz"/>
+                <constraint firstItem="8Mw-7d-YXp" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="p9z-l1-Lfz"/>
+                <constraint firstItem="zOR-0h-Mre" firstAttribute="leading" secondItem="B7b-x1-U9C" secondAttribute="trailing" constant="251" id="r5x-dd-TEG"/>
+                <constraint firstItem="B7b-x1-U9C" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="758" id="zGF-wb-iy5"/>
+            </constraints>
             <point key="canvasLocation" x="-210.1449275362319" y="130.58035714285714"/>
         </view>
     </objects>
     <resources>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
+        <image name="paperplane.fill" catalog="system" width="128" height="118"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

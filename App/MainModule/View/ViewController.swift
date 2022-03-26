@@ -18,7 +18,6 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter?.addGeo(map: map)
-       
         gesterSeting()
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -29,6 +28,12 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         super.viewDidDisappear(animated)
         navigationController?.setNavigationBarHidden(false, animated: true)
     }
+    
+    @IBAction func GPSButton(_ sender: UIButton) {
+        presenter?.addGeo(map: map)
+    }
+    
+    
     @IBAction func buttonTap(_ sender: Any) {
         let searchController = UISearchController(searchResultsController: nil)
         searchController.searchBar.backgroundColor = .black
