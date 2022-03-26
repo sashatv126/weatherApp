@@ -23,10 +23,12 @@
                 <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="8Mw-7d-YXp">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <gestureRecognizers/>
                 </mapView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="zOR-0h-Mre">
                     <rect key="frame" x="326" y="802" width="80" height="43"/>
                     <autoresizingMask key="autoresizingMask" heightSizable="YES"/>
+                    <gestureRecognizers/>
                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                     <state key="normal">
                         <imageReference key="image" image="magnifyingglass" catalog="system" symbolScale="large"/>

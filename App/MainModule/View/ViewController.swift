@@ -7,24 +7,19 @@
 
 import UIKit
 import MapKit
-class ViewController: UIViewController, UISearchBarDelegate {
+import CoreLocation
+class ViewController: UIViewController, UIGestureRecognizerDelegate {
     
     @IBOutlet weak var map: MKMapView!
+    
     
     var presenter : MainViewPresenterProtocol?
      
     override func viewDidLoad() {
         super.viewDidLoad()
+       
+        gesterSeting()
     }
-    
-
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        searchBar.resignFirstResponder()
-        dismiss(animated: true, completion: nil)
-        presenter?.search(searchRequest: searchBar.text, map: map)
-    }
-    
-    
     @IBAction func buttonTap(_ sender: Any) {
         let searchController = UISearchController(searchResultsController: nil)
         searchController.searchBar.delegate = self
@@ -33,7 +28,26 @@ class ViewController: UIViewController, UISearchBarDelegate {
         print(map.annotations.first?.coordinate.longitude)
         
     }
-   
+    @objc private func get(_ sender: UILongPressGestureRecognizer) {
+        let delAnnottion = map.annotations
+        map.removeAnnotations(delAnnottion)
+    
+        let location = sender.location(in: map)
+            let coordinate = map.convert(location, toCoordinateFrom: map)
+            let annotation = MKPointAnnotation()
+            annotation.coordinate = coordinate
+            print(coordinate)
+        
+            map.addAnnotation(annotation)
+    }
+    
+    private func gesterSeting() {
+        let  longPressRecognizer = UILongPressGestureRecognizer(target: self,
+                                                                        action: #selector(get))
+        longPressRecognizer.minimumPressDuration = 0.5
+        longPressRecognizer.delegate = self
+        map.addGestureRecognizer(longPressRecognizer)
+    }
 }
 extension ViewController : MainViewProtocol {
     func success() {
@@ -43,4 +57,12 @@ extension ViewController : MainViewProtocol {
         print("Error")
     }
 }
+extension ViewController : UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+        dismiss(animated: true, completion: nil)
+        presenter?.search(searchRequest: searchBar.text, map: map)
+    }
+}
+
 
