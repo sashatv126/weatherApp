@@ -8,11 +8,15 @@
 import UIKit
 
 protocol AssemblyBuilderProtocol {
+    func createSplashModule()
     func createMainModule(router : RouterProtocol) -> UIViewController
     func createSeconModule(router : RouterProtocol, coordination : CoordinationModel?) -> UIViewController
 }
 
 class AssemblyBuilder : AssemblyBuilderProtocol {
+    func createSplashModule() {
+    }
+    
     
     func createMainModule(router: RouterProtocol) -> UIViewController {
         let view = ViewController()
