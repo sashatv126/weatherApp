@@ -7,7 +7,7 @@
 
 import Foundation
 import CoreLocation
-
+//create user location
 class UserLocationManager : NSObject {
     static let shared = UserLocationManager()
     private let locationManager = CLLocationManager()

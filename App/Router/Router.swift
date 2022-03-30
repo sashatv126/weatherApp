@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+//add Router for navigation 
 protocol MainRouterProtocol {
     var nVC : UINavigationController? {get set}
     var assemblyBuider : AssemblyBuilderProtocol? { get set }
@@ -29,7 +30,7 @@ class Router: RouterProtocol {
     
     func initialViewController() {
         if let navigationController = nVC {
-            guard let vc = assemblyBuider?.createMainModule(router: self) else {return}
+            guard let vc = assemblyBuider?.createSplashModule(router: self) else {return}
             navigationController.viewControllers = [vc]
         }
     }

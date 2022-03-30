@@ -23,6 +23,7 @@
 		E79B274327EF7D6200DA72AC /* UserLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79B274227EF7D6200DA72AC /* UserLocationManager.swift */; };
 		E79B275127EF98A100DA72AC /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79B275027EF98A100DA72AC /* SplashViewController.swift */; };
 		E79B275627EF98B100DA72AC /* SplashPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79B275527EF98B100DA72AC /* SplashPresenter.swift */; };
+		E79B27AA27F44D6200DA72AC /* Text.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79B27A927F44D6200DA72AC /* Text.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		E79B274227EF7D6200DA72AC /* UserLocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLocationManager.swift; sourceTree = "<group>"; };
 		E79B275027EF98A100DA72AC /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		E79B275527EF98B100DA72AC /* SplashPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashPresenter.swift; sourceTree = "<group>"; };
+		E79B27A927F44D6200DA72AC /* Text.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Text.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -234,6 +236,7 @@
 		E79B274D27EF985400DA72AC /* SplashScreenModule */ = {
 			isa = PBXGroup;
 			children = (
+				E79B27AE27F44DB000DA72AC /* Model */,
 				E79B274F27EF987F00DA72AC /* Presenter */,
 				E79B274E27EF987600DA72AC /* View */,
 			);
@@ -254,6 +257,14 @@
 				E79B275527EF98B100DA72AC /* SplashPresenter.swift */,
 			);
 			path = Presenter;
+			sourceTree = "<group>";
+		};
+		E79B27AE27F44DB000DA72AC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E79B27A927F44D6200DA72AC /* Text.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -396,6 +407,7 @@
 				E77796D427EB4164006564C0 /* Router.swift in Sources */,
 				E77796D927EB4172006564C0 /* AssemblyBuilder.swift in Sources */,
 				E777966927EB3FDB006564C0 /* SceneDelegate.swift in Sources */,
+				E79B27AA27F44D6200DA72AC /* Text.swift in Sources */,
 				E79B274327EF7D6200DA72AC /* UserLocationManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

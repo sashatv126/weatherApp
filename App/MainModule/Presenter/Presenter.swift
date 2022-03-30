@@ -28,6 +28,7 @@ class MainPresenter : MainViewPresenterProtocol {
         self.view = view
         self.router = router
     }
+//func for add location with longGester on map
     func addGeo(map : MKMapView) {
         UserLocationManager.shared.getUserLocation{location in
             DispatchQueue.main.async {
@@ -41,10 +42,7 @@ class MainPresenter : MainViewPresenterProtocol {
             }
         }
     }
-    
-    
-    
-    
+//func for search by map
     func search(searchRequest: String?, map : MKMapView) {
         let search = MKLocalSearch.Request()
         search.naturalLanguageQuery = searchRequest
@@ -70,9 +68,7 @@ class MainPresenter : MainViewPresenterProtocol {
             }
         })
     }
-    
-    
-    
+//navigation 
     func tap(coordinate: CoordinationModel?) {
         router?.showSecondVC(coordination: coordinate)
     }

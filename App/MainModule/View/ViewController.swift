@@ -9,7 +9,7 @@ import UIKit
 import MapKit
 import CoreLocation
 class ViewController: UIViewController, UIGestureRecognizerDelegate {
-    
+//MARK: -View and Properties
     @IBOutlet weak var map: MKMapView!
     
     
@@ -20,6 +20,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         presenter?.addGeo(map: map)
         gesterSeting()
     }
+//MARK: -Life circle
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: false)
@@ -29,15 +30,15 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
+//MARK: -Actian func
     @IBAction func GPSButton(_ sender: UIButton) {
         presenter?.addGeo(map: map)
     }
     
     
     @IBAction func buttonTap(_ sender: Any) {
+//Create searhController
         let searchController = UISearchController(searchResultsController: nil)
-        searchController.searchBar.backgroundColor = .black
-        searchController.searchBar.layer.cornerRadius = 0
         searchController.searchBar.delegate = self
         present(searchController,animated: true,completion: nil)
     }
