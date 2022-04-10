@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E721EE7128030D2A00D0A986 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E721EE7028030D2A00D0A986 /* SecondViewController.swift */; };
 		E777966727EB3FDB006564C0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E777966627EB3FDB006564C0 /* AppDelegate.swift */; };
 		E777966927EB3FDB006564C0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E777966827EB3FDB006564C0 /* SceneDelegate.swift */; };
 		E777966B27EB3FDB006564C0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E777966A27EB3FDB006564C0 /* ViewController.swift */; };
@@ -42,6 +43,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E721EE7028030D2A00D0A986 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		E777966327EB3FDB006564C0 /* App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = App.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E777966627EB3FDB006564C0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E777966827EB3FDB006564C0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -90,6 +92,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E721EE7528030D7F00D0A986 /* SecondPresenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SecondPresenter;
+			sourceTree = "<group>";
+		};
 		E777965A27EB3FDB006564C0 = {
 			isa = PBXGroup;
 			children = (
@@ -217,6 +226,8 @@
 		E79B274027EF7CD800DA72AC /* SecondModule */ = {
 			isa = PBXGroup;
 			children = (
+				E721EE7528030D7F00D0A986 /* SecondPresenter */,
+				E721EE7028030D2A00D0A986 /* SecondViewController.swift */,
 			);
 			path = SecondModule;
 			sourceTree = "<group>";
@@ -384,6 +395,7 @@
 				E77796D427EB4164006564C0 /* Router.swift in Sources */,
 				E77796D927EB4172006564C0 /* AssemblyBuilder.swift in Sources */,
 				E777966927EB3FDB006564C0 /* SceneDelegate.swift in Sources */,
+				E721EE7128030D2A00D0A986 /* SecondViewController.swift in Sources */,
 				E79B274327EF7D6200DA72AC /* UserLocationManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

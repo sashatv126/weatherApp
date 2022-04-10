@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ViewController" customModule="App" customModuleProvider="target">
             <connections>
+                <outlet property="goButton" destination="Gvv-hC-o7A" id="zqN-Ha-oHM"/>
                 <outlet property="map" destination="8Mw-7d-YXp" id="fba-Kv-TVs"/>
                 <outlet property="view" destination="iN0-l3-epB" id="Y2Z-RC-H9Y"/>
             </connections>
@@ -45,18 +46,32 @@
                         <action selector="GPSButton:" destination="-1" eventType="touchUpInside" id="gnb-ul-gC0"/>
                     </connections>
                 </button>
+                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gvv-hC-o7A">
+                    <rect key="frame" x="338" y="54" width="44" height="37"/>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="29"/>
+                    <state key="normal" title="GO">
+                        <color key="titleColor" systemColor="systemBlueColor"/>
+                    </state>
+                    <connections>
+                        <action selector="tap:" destination="-1" eventType="touchUpInside" id="RGj-TN-QZM"/>
+                    </connections>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="B7b-x1-U9C" secondAttribute="bottom" constant="17" id="1Xy-sR-QcK"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Gvv-hC-o7A" secondAttribute="trailing" constant="32" id="4Gi-vD-ogE"/>
                 <constraint firstItem="zOR-0h-Mre" firstAttribute="leading" secondItem="B7b-x1-U9C" secondAttribute="trailing" constant="251" id="7hq-jw-FUd"/>
                 <constraint firstItem="B7b-x1-U9C" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="AwM-ZF-pQ3"/>
                 <constraint firstItem="8Mw-7d-YXp" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="Uia-nF-d6v"/>
+                <constraint firstItem="Gvv-hC-o7A" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="10" id="WnI-wz-EVk"/>
+                <constraint firstItem="Gvv-hC-o7A" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="338" id="aPQ-4C-Bce"/>
                 <constraint firstItem="8Mw-7d-YXp" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="gA1-O8-HeJ"/>
                 <constraint firstAttribute="bottom" secondItem="8Mw-7d-YXp" secondAttribute="bottom" id="inY-uW-bkz"/>
                 <constraint firstItem="8Mw-7d-YXp" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="p9z-l1-Lfz"/>
                 <constraint firstItem="zOR-0h-Mre" firstAttribute="leading" secondItem="B7b-x1-U9C" secondAttribute="trailing" constant="251" id="r5x-dd-TEG"/>
+                <constraint firstItem="zOR-0h-Mre" firstAttribute="top" secondItem="Gvv-hC-o7A" secondAttribute="bottom" constant="711" id="yyS-7U-Voh"/>
                 <constraint firstItem="B7b-x1-U9C" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="758" id="zGF-wb-iy5"/>
             </constraints>
             <point key="canvasLocation" x="-210.1449275362319" y="130.58035714285714"/>
@@ -67,6 +82,9 @@
         <image name="paperplane.fill" catalog="system" width="128" height="118"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

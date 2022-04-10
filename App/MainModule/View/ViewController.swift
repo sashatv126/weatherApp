@@ -10,6 +10,8 @@ import MapKit
 import CoreLocation
 class ViewController: UIViewController, UIGestureRecognizerDelegate {
 //MARK: -View and Properties
+    
+    @IBOutlet weak var goButton: UIButton!
     @IBOutlet weak var map: MKMapView!
     
     
@@ -33,6 +35,13 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
 //MARK: -Actian func
     @IBAction func GPSButton(_ sender: UIButton) {
         presenter?.addGeo(map: map)
+        goButton.isHidden = false
+    }
+    
+    @IBAction func tap(_ sender: UIButton) {
+        let coordinatel = CoordinationModel(lat: map.annotations.first?.coordinate.latitude, lon: map.annotations.first?.coordinate.longitude)
+        print(coordinatel)
+        presenter?.tap(coordinate: coordinatel)
     }
     
     
@@ -49,8 +58,8 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
             let coordinate = map.convert(location, toCoordinateFrom: map)
             let annotation = MKPointAnnotation()
             annotation.coordinate = coordinate
-            print(coordinate)
             map.addAnnotation(annotation)
+        goButton.isHidden = false
     }
     private func gesterSeting() {
         let  longPressRecognizer = UILongPressGestureRecognizer(target: self,
@@ -73,6 +82,7 @@ extension ViewController : UISearchBarDelegate {
         searchBar.resignFirstResponder()
         dismiss(animated: true, completion: nil)
         presenter?.search(searchRequest: searchBar.text, map: map)
+        goButton.isHidden = false
     }
 }
 
