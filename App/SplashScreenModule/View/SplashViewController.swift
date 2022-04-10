@@ -7,8 +7,9 @@
 
 import UIKit
 
-class SplashViewController: UIViewController {
+final class SplashViewController: UIViewController {
 //MARK: -Views
+     var router : RouterProtocol?
     private lazy var textLabel : UILabel = {
         let label = UILabel()
         label.layer.shadowColor = UIColor.black.cgColor
@@ -21,27 +22,36 @@ class SplashViewController: UIViewController {
         label.font = UIFont.systemFont(ofSize: 48)
         label.numberOfLines = 0
         label.textAlignment = .center
-        
+        label.text = "Let's find out where you are"
         return label
     }()
 //MARK: -Properties
-        var presenter : SplashPresenter?
+   
 //MARK: -LifeCircle
     override func viewDidLoad() {
         super.viewDidLoad()
         setBackground()
         setlabel()
+        dismiss()
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: false)
     }
-    
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-        navigationController?.setNavigationBarHidden(true, animated: true)
+        navigationController?.setNavigationBarHidden(false, animated: true)
     }
-    
+    private func dismiss() {
+        DispatchQueue.main.asyncAfter(deadline: .now()+3) {[weak self] in
+            UIView.animate(withDuration: 1,animations: {
+                self?.textLabel.alpha = 0
+            })
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.2) {
+                self?.router?.show()
+            }
+        }
+    }
     private func setBackground() {
         view.backgroundColor = .white
         let layer0 = CAGradientLayer()
@@ -58,19 +68,11 @@ class SplashViewController: UIViewController {
         self.view.addSubview(textLabel)
     }
     private func setlabel() {
-        self.textLabel.text = self.presenter?.text?.text
         textLabel.translatesAutoresizingMaskIntoConstraints = false
         textLabel.widthAnchor.constraint(equalToConstant: 248).isActive = true
         textLabel.heightAnchor.constraint(equalToConstant: 177).isActive = true
         textLabel.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 83).isActive = true
         textLabel.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 359).isActive = true
     }
-}
-extension SplashViewController : SplashViewProtocol {
-    func success() {
-        print("Done")
-    }
-    func failure(error: Error) {
-        print(error.localizedDescription)
-    }
+    
 }

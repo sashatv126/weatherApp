@@ -15,9 +15,18 @@ protocol MainRouterProtocol {
 protocol RouterProtocol : MainRouterProtocol{
     func initialViewController()
     func showSecondVC(coordination : CoordinationModel?)
+    func show()
     
 }
 class Router: RouterProtocol {
+    func show() {
+        if let navigationController = nVC {
+            guard let vc = assemblyBuider?.createMainModule(router: self) else {return}
+            navigationController.viewControllers = [vc]
+        }
+    }
+    
+    
     var assemblyBuider: AssemblyBuilderProtocol?
     
     var nVC: UINavigationController?
@@ -30,7 +39,8 @@ class Router: RouterProtocol {
     
     func initialViewController() {
         if let navigationController = nVC {
-            guard let vc = assemblyBuider?.createSplashModule(router: self) else {return}
+           let vc = SplashViewController()
+            vc.router = self
             navigationController.viewControllers = [vc]
         }
     }
