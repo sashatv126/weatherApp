@@ -28,3 +28,5 @@ class NetworkService : NetworkServiceProtocol {
         }.resume()
     }
 }
+
+//https://api.openweathermap.org/data/2.5/weather?lat=35&lon=139&appid=dfb729618687300ffd0e58835f3e4f1c
