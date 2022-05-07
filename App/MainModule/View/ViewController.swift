@@ -16,6 +16,8 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
     
     
     var presenter : MainViewPresenterProtocol?
+    
+    let notifacations = NotificationCenter.default
      
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +34,16 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         navigationController?.setNavigationBarHidden(true, animated: true)
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        let coordinatel = CoordinationModel(lat: map.annotations.first?.coordinate.latitude, lon: map.annotations.first?.coordinate.longitude)
+        
+        let dict = ["model" : coordinatel]
+        
+        notifacations.post(name: NSNotification.Name("name"), object: self, userInfo: dict)
+    }
+    
 //MARK: -Actian func
     @IBAction func GPSButton(_ sender: UIButton) {
         presenter?.addGeo(map: map)
@@ -40,10 +52,9 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
     
     @IBAction func tap(_ sender: UIButton) {
         let coordinatel = CoordinationModel(lat: map.annotations.first?.coordinate.latitude, lon: map.annotations.first?.coordinate.longitude)
-        print(coordinatel)
         presenter?.tap(coordinate: coordinatel)
         
-        //NotificationCenter.default.post(name: <#T##NSNotification.Name#>, object: <#T##Any?#>)
+       
     }
     
     

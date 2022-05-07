@@ -16,7 +16,6 @@ protocol MainViewPresenterProtocol : class {
 }
 class MainPresenter : MainViewPresenterProtocol {
 
-    
     weak var view : MainViewProtocol?
     var router : RouterProtocol?
     
