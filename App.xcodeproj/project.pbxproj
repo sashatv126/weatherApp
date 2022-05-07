@@ -29,6 +29,9 @@
 		E7B419432826523C00247B54 /* WeatherSecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B419422826523C00247B54 /* WeatherSecondViewController.swift */; };
 		E7B419482826525100247B54 /* WeatherThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B419472826525100247B54 /* WeatherThirdViewController.swift */; };
 		E7B4194E282653C800247B54 /* SecondView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B4194D282653C800247B54 /* SecondView.swift */; };
+		E7B4195B28265D4900247B54 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B4195A28265D4900247B54 /* Network.swift */; };
+		E7B4196028265E1C00247B54 /* SplashSecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B4195F28265E1C00247B54 /* SplashSecondViewController.swift */; };
+		E7B41965282667A700247B54 /* RouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B41964282667A700247B54 /* RouterProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +80,9 @@
 		E7B419422826523C00247B54 /* WeatherSecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherSecondViewController.swift; sourceTree = "<group>"; };
 		E7B419472826525100247B54 /* WeatherThirdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherThirdViewController.swift; sourceTree = "<group>"; };
 		E7B4194D282653C800247B54 /* SecondView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondView.swift; sourceTree = "<group>"; };
+		E7B4195A28265D4900247B54 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		E7B4195F28265E1C00247B54 /* SplashSecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashSecondViewController.swift; sourceTree = "<group>"; };
+		E7B41964282667A700247B54 /* RouterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,8 +133,8 @@
 		E777966527EB3FDB006564C0 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				E7B4195928265D1500247B54 /* Network */,
 				E7B4194C282653AE00247B54 /* Extension */,
-				E7B4193C282651B600247B54 /* 3 module */,
 				E79B274D27EF985400DA72AC /* SplashScreenModule */,
 				E79B274127EF7D1700DA72AC /* Interact + Feature */,
 				E79B273F27EF7CB100DA72AC /* AssemblyBuilder */,
@@ -219,6 +225,7 @@
 			isa = PBXGroup;
 			children = (
 				E77796D327EB4164006564C0 /* Router.swift */,
+				E7B41964282667A700247B54 /* RouterProtocol.swift */,
 			);
 			path = Router;
 			sourceTree = "<group>";
@@ -234,6 +241,7 @@
 		E79B274027EF7CD800DA72AC /* SecondModule */ = {
 			isa = PBXGroup;
 			children = (
+				E7B4193C282651B600247B54 /* 3 module */,
 				E7B4195528265AB100247B54 /* Delegate */,
 				E721EE7028030D2A00D0A986 /* SecondViewController.swift */,
 				E7B419312826460A00247B54 /* SecondViewPresenter.swift */,
@@ -261,6 +269,7 @@
 			isa = PBXGroup;
 			children = (
 				E79B275027EF98A100DA72AC /* SplashViewController.swift */,
+				E7B4195F28265E1C00247B54 /* SplashSecondViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -296,6 +305,14 @@
 			children = (
 			);
 			path = Delegate;
+			sourceTree = "<group>";
+		};
+		E7B4195928265D1500247B54 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				E7B4195A28265D4900247B54 /* Network.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -436,9 +453,12 @@
 				E77796CA27EB4123006564C0 /* Coordination.swift in Sources */,
 				E777966727EB3FDB006564C0 /* AppDelegate.swift in Sources */,
 				E7B4193E282651DB00247B54 /* WeatherViewController.swift in Sources */,
+				E7B41965282667A700247B54 /* RouterProtocol.swift in Sources */,
 				E7B419432826523C00247B54 /* WeatherSecondViewController.swift in Sources */,
+				E7B4196028265E1C00247B54 /* SplashSecondViewController.swift in Sources */,
 				E79B275127EF98A100DA72AC /* SplashViewController.swift in Sources */,
 				E77796C227EB4118006564C0 /* Presenter.swift in Sources */,
+				E7B4195B28265D4900247B54 /* Network.swift in Sources */,
 				E77796D427EB4164006564C0 /* Router.swift in Sources */,
 				E77796D927EB4172006564C0 /* AssemblyBuilder.swift in Sources */,
 				E777966927EB3FDB006564C0 /* SceneDelegate.swift in Sources */,

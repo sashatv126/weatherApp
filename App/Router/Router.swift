@@ -7,26 +7,9 @@
 
 import Foundation
 import UIKit
-//add Router for navigation 
-protocol MainRouterProtocol {
-    var nVC : UINavigationController? {get set}
-    var assemblyBuider : AssemblyBuilderProtocol? { get set }
-}
-
-protocol RouterProtocol : MainRouterProtocol{
-    func initialViewController()
-    func showSecondVC(coordination : CoordinationModel?)
-    func show()
-    
-}
+//add Router for navigation
 
 class Router: RouterProtocol {
-    func show() {
-        if let navigationController = nVC {
-            guard let vc = assemblyBuider?.createMainModule(router: self) else {return}
-            navigationController.viewControllers = [vc]
-        }
-    }
     
     var assemblyBuider: AssemblyBuilderProtocol?
     
@@ -37,17 +20,34 @@ class Router: RouterProtocol {
         self.assemblyBuider = assebly
     }
     
+    func showSecondSplash() {
+        if let navigationController = nVC {
+           let vc = SplashSecondViewController()
+            vc.router = self
+            navigationController.viewControllers = [vc]
+        }
+    }
+    
+    func show() {
+        
+        if let navigationController = nVC {
+            guard let vc = assemblyBuider?.createMainModule(router: self) else {return}
+            navigationController.viewControllers = [vc]
+        }
+    }
     
     func initialViewController() {
+        
         if let navigationController = nVC {
            let vc = SplashViewController()
             vc.router = self
             navigationController.viewControllers = [vc]
         }
     }
-    func showSecondVC(coordination: CoordinationModel?) {
+    func showSecondVC() {
+        
         if let navigationController = nVC {
-            guard let secondVc = assemblyBuider?.createSeconModule(router: self, coordination: coordination) else {return}
+            guard let secondVc = assemblyBuider?.createSeconModule(router: self) else {return}
             navigationController.pushViewController(secondVc , animated: true)
         }
     }

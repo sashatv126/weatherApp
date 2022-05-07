@@ -8,8 +8,9 @@
 import UIKit
 //Builder, which use for build the modules
 protocol AssemblyBuilderProtocol {
+    
     func createMainModule(router : RouterProtocol) -> UIViewController
-    func createSeconModule(router : RouterProtocol, coordination : CoordinationModel?) -> UIViewController
+    func createSeconModule(router : RouterProtocol) -> UIViewController
 }
 
 class AssemblyBuilder : AssemblyBuilderProtocol {
@@ -20,7 +21,8 @@ class AssemblyBuilder : AssemblyBuilderProtocol {
         view.presenter = presenter
         return view
     }
-    func createSeconModule(router: RouterProtocol, coordination: CoordinationModel?) -> UIViewController {
+    
+    func createSeconModule(router: RouterProtocol) -> UIViewController {
         let view = SecondViewController(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)
         return view
     }

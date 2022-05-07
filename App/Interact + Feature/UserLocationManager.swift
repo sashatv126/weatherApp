@@ -9,6 +9,7 @@ import Foundation
 import CoreLocation
 //create user location
 class UserLocationManager : NSObject {
+    
     static let shared = UserLocationManager()
     private let locationManager = CLLocationManager()
     private var completition : ((CLLocation)->Void)?
@@ -19,6 +20,7 @@ class UserLocationManager : NSObject {
         locationManager.startUpdatingLocation()
     }
 }
+
 extension UserLocationManager : CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let locations = locations.first  else {return}

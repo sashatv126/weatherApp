@@ -7,11 +7,12 @@
 
 import UIKit
 
-final class SplashViewController: UIViewController {
+final class SplashSecondViewController : UIViewController {
 //MARK: -Views
     var router : RouterProtocol?
     
     private lazy var textLabel : UILabel = {
+        
         let label = UILabel()
         label.layer.shadowColor = UIColor.black.cgColor
         label.layer.shadowRadius = 3.0
@@ -23,37 +24,43 @@ final class SplashViewController: UIViewController {
         label.font = UIFont.systemFont(ofSize: 48)
         label.numberOfLines = 0
         label.textAlignment = .center
-        label.text = "Let's find out where you are"
+        label.text = "Let's go"
         return label
     }()
 //MARK: -Properties
    
 //MARK: -LifeCircle
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         setBackground()
         setlabel()
         dismiss()
+        
     }
     override func viewWillAppear(_ animated: Bool) {
+        
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: false)
     }
     override func viewDidDisappear(_ animated: Bool) {
+        
         super.viewDidDisappear(animated)
-        navigationController?.setNavigationBarHidden(false, animated: true)
+        navigationController?.setNavigationBarHidden(true, animated: true)
     }
     private func dismiss() {
+        
         DispatchQueue.main.asyncAfter(deadline: .now()+3) {[weak self] in
             UIView.animate(withDuration: 1,animations: {
                 self?.textLabel.alpha = 0
             })
             DispatchQueue.main.asyncAfter(deadline: .now() + 1.2) {
-                self?.router?.show()
+                self?.router?.showSecondVC()
             }
         }
     }
     private func setBackground() {
+        
         view.backgroundColor = .white
         let layer0 = CAGradientLayer()
         layer0.colors = [
@@ -77,3 +84,4 @@ final class SplashViewController: UIViewController {
     }
     
 }
+

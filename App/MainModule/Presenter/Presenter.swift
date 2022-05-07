@@ -67,7 +67,7 @@ class MainPresenter : MainViewPresenterProtocol {
     }
 //navigation 
     func tap(coordinate: CoordinationModel?) {
-        router?.showSecondVC(coordination: coordinate)
+        router?.showSecondSplash()
     }
     
     
