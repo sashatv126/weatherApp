@@ -32,6 +32,7 @@
 		E7B4195B28265D4900247B54 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B4195A28265D4900247B54 /* Network.swift */; };
 		E7B4196028265E1C00247B54 /* SplashSecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B4195F28265E1C00247B54 /* SplashSecondViewController.swift */; };
 		E7B41965282667A700247B54 /* RouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B41964282667A700247B54 /* RouterProtocol.swift */; };
+		E7D2270128268645006CE562 /* UIKit + UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D2270028268645006CE562 /* UIKit + UIViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +84,7 @@
 		E7B4195A28265D4900247B54 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		E7B4195F28265E1C00247B54 /* SplashSecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashSecondViewController.swift; sourceTree = "<group>"; };
 		E7B41964282667A700247B54 /* RouterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterProtocol.swift; sourceTree = "<group>"; };
+		E7D2270028268645006CE562 /* UIKit + UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIKit + UIViewController.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -285,9 +287,9 @@
 		E7B4193C282651B600247B54 /* 3 module */ = {
 			isa = PBXGroup;
 			children = (
-				E7B4193D282651DB00247B54 /* WeatherViewController.swift */,
-				E7B419422826523C00247B54 /* WeatherSecondViewController.swift */,
-				E7B419472826525100247B54 /* WeatherThirdViewController.swift */,
+				E7D226FB28268010006CE562 /* ThirdPage */,
+				E7D226FA28268008006CE562 /* SecondPage */,
+				E7D226F928267FFB006CE562 /* FirstPage */,
 			);
 			path = "3 module";
 			sourceTree = "<group>";
@@ -296,6 +298,7 @@
 			isa = PBXGroup;
 			children = (
 				E7B4194D282653C800247B54 /* SecondView.swift */,
+				E7D2270028268645006CE562 /* UIKit + UIViewController.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -313,6 +316,30 @@
 				E7B4195A28265D4900247B54 /* Network.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		E7D226F928267FFB006CE562 /* FirstPage */ = {
+			isa = PBXGroup;
+			children = (
+				E7B4193D282651DB00247B54 /* WeatherViewController.swift */,
+			);
+			path = FirstPage;
+			sourceTree = "<group>";
+		};
+		E7D226FA28268008006CE562 /* SecondPage */ = {
+			isa = PBXGroup;
+			children = (
+				E7B419422826523C00247B54 /* WeatherSecondViewController.swift */,
+			);
+			path = SecondPage;
+			sourceTree = "<group>";
+		};
+		E7D226FB28268010006CE562 /* ThirdPage */ = {
+			isa = PBXGroup;
+			children = (
+				E7B419472826525100247B54 /* WeatherThirdViewController.swift */,
+			);
+			path = ThirdPage;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -465,6 +492,7 @@
 				E721EE7128030D2A00D0A986 /* SecondViewController.swift in Sources */,
 				E79B274327EF7D6200DA72AC /* UserLocationManager.swift in Sources */,
 				E7B419382826465700247B54 /* ViewDelegate.swift in Sources */,
+				E7D2270128268645006CE562 /* UIKit + UIViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
