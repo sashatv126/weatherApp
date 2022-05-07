@@ -9,22 +9,27 @@ import UIKit
 
 extension SecondViewController {
     
+     
+    
      func setupPage() {
+        let assembly = AssemblyBuilder()
         
         dataSource = self
         delegate = self
         
         pageControl.addTarget(self, action: #selector(pageControlTapped), for: .valueChanged)
         
-        let page1 = WeatherViewController()
-        let page2 = WeatherSecondViewController()
-        let page3 = WeatherThirdViewController()
+        let page1 = assembly.createFirstPage()
+        let page2 = assembly.createSecondPage()
+        let page3 = assembly.createThirdPage()
         
         pages.append(page1)
         pages.append(page2)
         pages.append(page3)
         
         setViewControllers([pages[initialPage]], direction: .forward, animated: true, completion: nil)
+        
+        
     }
     
     func style() {

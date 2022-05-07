@@ -34,6 +34,7 @@
 		E7B41965282667A700247B54 /* RouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B41964282667A700247B54 /* RouterProtocol.swift */; };
 		E7D2270128268645006CE562 /* UIKit + UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D2270028268645006CE562 /* UIKit + UIViewController.swift */; };
 		E7D2270728269DD0006CE562 /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D2270628269DD0006CE562 /* WeatherModel.swift */; };
+		E7D2270C2826B106006CE562 /* ViewDelegateProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D2270B2826B106006CE562 /* ViewDelegateProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +88,7 @@
 		E7B41964282667A700247B54 /* RouterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterProtocol.swift; sourceTree = "<group>"; };
 		E7D2270028268645006CE562 /* UIKit + UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIKit + UIViewController.swift"; sourceTree = "<group>"; };
 		E7D2270628269DD0006CE562 /* WeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
+		E7D2270B2826B106006CE562 /* ViewDelegateProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewDelegateProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -309,6 +311,7 @@
 		E7B4195528265AB100247B54 /* Delegate */ = {
 			isa = PBXGroup;
 			children = (
+				E7D2270B2826B106006CE562 /* ViewDelegateProtocol.swift */,
 			);
 			path = Delegate;
 			sourceTree = "<group>";
@@ -493,6 +496,7 @@
 				E7B4193E282651DB00247B54 /* WeatherViewController.swift in Sources */,
 				E7B41965282667A700247B54 /* RouterProtocol.swift in Sources */,
 				E7B419432826523C00247B54 /* WeatherSecondViewController.swift in Sources */,
+				E7D2270C2826B106006CE562 /* ViewDelegateProtocol.swift in Sources */,
 				E7B4196028265E1C00247B54 /* SplashSecondViewController.swift in Sources */,
 				E7D2270728269DD0006CE562 /* WeatherModel.swift in Sources */,
 				E79B275127EF98A100DA72AC /* SplashViewController.swift in Sources */,

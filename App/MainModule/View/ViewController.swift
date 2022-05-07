@@ -42,6 +42,8 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         let coordinatel = CoordinationModel(lat: map.annotations.first?.coordinate.latitude, lon: map.annotations.first?.coordinate.longitude)
         print(coordinatel)
         presenter?.tap(coordinate: coordinatel)
+        
+        //NotificationCenter.default.post(name: <#T##NSNotification.Name#>, object: <#T##Any?#>)
     }
     
     

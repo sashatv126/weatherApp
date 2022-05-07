@@ -9,18 +9,18 @@ import UIKit
 
 extension UIViewController {
     
-    func addLayout(label : UILabel, image : UIImageView, button : UIButton) {
+    func addLayout(label : UILabel, image : UIImageView, button : UIButton, tempLabel : UILabel) {
         
         view.backgroundColor = UIColor(patternImage: #imageLiteral(resourceName: "XR"))
         
         label.translatesAutoresizingMaskIntoConstraints = false
         image.translatesAutoresizingMaskIntoConstraints = false
         button.translatesAutoresizingMaskIntoConstraints = false
+        tempLabel.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(image)
         view.addSubview(label)
         view.addSubview(button)
-        
-        image.image = setWeather(time: "Day", weather: "Clear")
+        view.addSubview(tempLabel)
         
         NSLayoutConstraint.activate([
             label.bottomAnchor.constraint(equalTo: view.bottomAnchor,constant: -140),
@@ -40,6 +40,11 @@ extension UIViewController {
             button.trailingAnchor.constraint(equalTo: view.trailingAnchor,constant: -20),
             button.widthAnchor.constraint(equalToConstant: 48),
             button.heightAnchor.constraint(equalToConstant: 56)
+        ])
+        
+        NSLayoutConstraint.activate([
+            tempLabel.bottomAnchor.constraint(equalTo: label.topAnchor,constant: -60),
+            tempLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         ])
     }
     
