@@ -21,7 +21,7 @@ class AssemblyBuilder : AssemblyBuilderProtocol {
         return view
     }
     func createSeconModule(router: RouterProtocol, coordination: CoordinationModel?) -> UIViewController {
-        let view = ViewController()
+        let view = SecondViewController(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)
         return view
     }
 }

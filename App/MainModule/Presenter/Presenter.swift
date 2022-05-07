@@ -7,10 +7,7 @@
 
 import Foundation
 import MapKit
-protocol MainViewProtocol : class {
-    func success()
-    func failure(error : Error)
-}
+
 protocol MainViewPresenterProtocol : class {
     init(view : MainViewProtocol, router : RouterProtocol )
     func search(searchRequest : String?, map : MKMapView )

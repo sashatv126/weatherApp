@@ -29,7 +29,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
     }
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-        navigationController?.setNavigationBarHidden(false, animated: true)
+        navigationController?.setNavigationBarHidden(true, animated: true)
     }
     
 //MARK: -Actian func

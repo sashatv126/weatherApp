@@ -12,12 +12,14 @@ protocol MainRouterProtocol {
     var nVC : UINavigationController? {get set}
     var assemblyBuider : AssemblyBuilderProtocol? { get set }
 }
+
 protocol RouterProtocol : MainRouterProtocol{
     func initialViewController()
     func showSecondVC(coordination : CoordinationModel?)
     func show()
     
 }
+
 class Router: RouterProtocol {
     func show() {
         if let navigationController = nVC {
@@ -25,7 +27,6 @@ class Router: RouterProtocol {
             navigationController.viewControllers = [vc]
         }
     }
-    
     
     var assemblyBuider: AssemblyBuilderProtocol?
     

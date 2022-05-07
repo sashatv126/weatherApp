@@ -23,6 +23,12 @@
 		E777970427EB7F61006564C0 /* View.xib in Resources */ = {isa = PBXBuildFile; fileRef = E777970327EB7F61006564C0 /* View.xib */; };
 		E79B274327EF7D6200DA72AC /* UserLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79B274227EF7D6200DA72AC /* UserLocationManager.swift */; };
 		E79B275127EF98A100DA72AC /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79B275027EF98A100DA72AC /* SplashViewController.swift */; };
+		E7B419322826460A00247B54 /* SecondViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B419312826460A00247B54 /* SecondViewPresenter.swift */; };
+		E7B419382826465700247B54 /* ViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B419372826465700247B54 /* ViewDelegate.swift */; };
+		E7B4193E282651DB00247B54 /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B4193D282651DB00247B54 /* WeatherViewController.swift */; };
+		E7B419432826523C00247B54 /* WeatherSecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B419422826523C00247B54 /* WeatherSecondViewController.swift */; };
+		E7B419482826525100247B54 /* WeatherThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B419472826525100247B54 /* WeatherThirdViewController.swift */; };
+		E7B4194E282653C800247B54 /* SecondView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B4194D282653C800247B54 /* SecondView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +71,12 @@
 		E777970327EB7F61006564C0 /* View.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = View.xib; sourceTree = "<group>"; };
 		E79B274227EF7D6200DA72AC /* UserLocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLocationManager.swift; sourceTree = "<group>"; };
 		E79B275027EF98A100DA72AC /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		E7B419312826460A00247B54 /* SecondViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewPresenter.swift; sourceTree = "<group>"; };
+		E7B419372826465700247B54 /* ViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewDelegate.swift; sourceTree = "<group>"; };
+		E7B4193D282651DB00247B54 /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
+		E7B419422826523C00247B54 /* WeatherSecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherSecondViewController.swift; sourceTree = "<group>"; };
+		E7B419472826525100247B54 /* WeatherThirdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherThirdViewController.swift; sourceTree = "<group>"; };
+		E7B4194D282653C800247B54 /* SecondView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,13 +104,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		E721EE7528030D7F00D0A986 /* SecondPresenter */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = SecondPresenter;
-			sourceTree = "<group>";
-		};
 		E777965A27EB3FDB006564C0 = {
 			isa = PBXGroup;
 			children = (
@@ -122,6 +127,8 @@
 		E777966527EB3FDB006564C0 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				E7B4194C282653AE00247B54 /* Extension */,
+				E7B4193C282651B600247B54 /* 3 module */,
 				E79B274D27EF985400DA72AC /* SplashScreenModule */,
 				E79B274127EF7D1700DA72AC /* Interact + Feature */,
 				E79B273F27EF7CB100DA72AC /* AssemblyBuilder */,
@@ -183,6 +190,7 @@
 		E77796A127EB4067006564C0 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
+				E7B419362826463800247B54 /* Delegate */,
 				E77796C127EB4118006564C0 /* Presenter.swift */,
 			);
 			path = Presenter;
@@ -226,8 +234,9 @@
 		E79B274027EF7CD800DA72AC /* SecondModule */ = {
 			isa = PBXGroup;
 			children = (
-				E721EE7528030D7F00D0A986 /* SecondPresenter */,
+				E7B4195528265AB100247B54 /* Delegate */,
 				E721EE7028030D2A00D0A986 /* SecondViewController.swift */,
+				E7B419312826460A00247B54 /* SecondViewPresenter.swift */,
 			);
 			path = SecondModule;
 			sourceTree = "<group>";
@@ -254,6 +263,39 @@
 				E79B275027EF98A100DA72AC /* SplashViewController.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		E7B419362826463800247B54 /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				E7B419372826465700247B54 /* ViewDelegate.swift */,
+			);
+			path = Delegate;
+			sourceTree = "<group>";
+		};
+		E7B4193C282651B600247B54 /* 3 module */ = {
+			isa = PBXGroup;
+			children = (
+				E7B4193D282651DB00247B54 /* WeatherViewController.swift */,
+				E7B419422826523C00247B54 /* WeatherSecondViewController.swift */,
+				E7B419472826525100247B54 /* WeatherThirdViewController.swift */,
+			);
+			path = "3 module";
+			sourceTree = "<group>";
+		};
+		E7B4194C282653AE00247B54 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				E7B4194D282653C800247B54 /* SecondView.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		E7B4195528265AB100247B54 /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Delegate;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -387,9 +429,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E7B419322826460A00247B54 /* SecondViewPresenter.swift in Sources */,
+				E7B419482826525100247B54 /* WeatherThirdViewController.swift in Sources */,
 				E777966B27EB3FDB006564C0 /* ViewController.swift in Sources */,
+				E7B4194E282653C800247B54 /* SecondView.swift in Sources */,
 				E77796CA27EB4123006564C0 /* Coordination.swift in Sources */,
 				E777966727EB3FDB006564C0 /* AppDelegate.swift in Sources */,
+				E7B4193E282651DB00247B54 /* WeatherViewController.swift in Sources */,
+				E7B419432826523C00247B54 /* WeatherSecondViewController.swift in Sources */,
 				E79B275127EF98A100DA72AC /* SplashViewController.swift in Sources */,
 				E77796C227EB4118006564C0 /* Presenter.swift in Sources */,
 				E77796D427EB4164006564C0 /* Router.swift in Sources */,
@@ -397,6 +444,7 @@
 				E777966927EB3FDB006564C0 /* SceneDelegate.swift in Sources */,
 				E721EE7128030D2A00D0A986 /* SecondViewController.swift in Sources */,
 				E79B274327EF7D6200DA72AC /* UserLocationManager.swift in Sources */,
+				E7B419382826465700247B54 /* ViewDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
