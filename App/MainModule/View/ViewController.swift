@@ -17,8 +17,6 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
     
     var presenter : MainViewPresenterProtocol?
     
-    let notifacations = NotificationCenter.default
-     
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter?.addGeo(map: map)
@@ -29,19 +27,10 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: false)
     }
+    
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         navigationController?.setNavigationBarHidden(true, animated: true)
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        
-        let coordinatel = CoordinationModel(lat: map.annotations.first?.coordinate.latitude, lon: map.annotations.first?.coordinate.longitude)
-        
-        let dict = ["model" : coordinatel]
-        
-        notifacations.post(name: NSNotification.Name("name"), object: self, userInfo: dict)
     }
     
 //MARK: -Actian func
@@ -53,8 +42,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
     @IBAction func tap(_ sender: UIButton) {
         let coordinatel = CoordinationModel(lat: map.annotations.first?.coordinate.latitude, lon: map.annotations.first?.coordinate.longitude)
         presenter?.tap(coordinate: coordinatel)
-        
-       
+        SecondViewPresenter.model = coordinatel
     }
     
     
@@ -64,6 +52,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         searchController.searchBar.delegate = self
         present(searchController,animated: true,completion: nil)
     }
+    
     @objc private func get(_ sender: UILongPressGestureRecognizer) {
         let delAnnottion = map.annotations
         map.removeAnnotations(delAnnottion)
@@ -74,6 +63,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
             map.addAnnotation(annotation)
         goButton.isHidden = false
     }
+    
     private func gesterSeting() {
         let  longPressRecognizer = UILongPressGestureRecognizer(target: self,
                                                                 action: #selector(get))
@@ -81,16 +71,22 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         longPressRecognizer.delegate = self
         map.addGestureRecognizer(longPressRecognizer)
     }
+    
 }
+
 extension ViewController : MainViewProtocol {
+    
     func success() {
         print("Done")
     }
     func failure(error: Error) {
         print("Error")
     }
+    
 }
+
 extension ViewController : UISearchBarDelegate {
+    
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
         dismiss(animated: true, completion: nil)

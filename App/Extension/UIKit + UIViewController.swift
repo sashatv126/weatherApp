@@ -50,12 +50,15 @@ extension UIViewController {
     
     func setWeather(time : String, weather : String) -> UIImage {
         
-        if time == "Day" {
+        if time == "Day" && weather != "No Data" {
             let desc = ["Rain" : #imageLiteral(resourceName: "Group 23"), "Clear" : #imageLiteral(resourceName: "Group 19") , "Clouds" : #imageLiteral(resourceName: "Group 25")]
-            return desc[weather]!
+            
+                return desc[weather] ?? #imageLiteral(resourceName: "Group 14")
         } else {
+            
             let desc = ["Rain" : #imageLiteral(resourceName: "Group 23"), "Clear" : #imageLiteral(resourceName: "Group 27"), "Clouds" : #imageLiteral(resourceName: "Group 26")]
-            return desc[weather]!
+            
+            return desc[weather] ?? #imageLiteral(resourceName: "Group 14")
         }
     }
 }

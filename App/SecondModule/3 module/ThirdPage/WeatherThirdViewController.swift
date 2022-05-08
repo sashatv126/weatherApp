@@ -67,10 +67,16 @@ class WeatherThirdViewController : UIViewController {
 
 extension WeatherThirdViewController : ViewDelegateProtocol {
     func getData() {
+        guard let text = (presenter.object?.main?.temp) else {
+            welcomeLabel.text = "No Data"
+            tempLabel.text = "No Data"
+            image.image = #imageLiteral(resourceName: "Group 14")
+            return
+        }
         welcomeLabel.text = presenter.object?.weather?.first?.main
-        image.image = setWeather(time: "Day", weather: (presenter.object?.weather?.first?.main) ?? "")
+        image.image = setWeather(time: "Day", weather: (presenter.object?.weather?.first?.main) ?? "No Data")
         let tempText = String(Int((presenter.object?.main?.temp)! - 273))
-        let temp = Int((presenter.object?.main?.temp)! - 273)
+        let temp = Int((text) - 273)
         
         if temp > 0 {
             tempLabel.text = "+\(tempText)"

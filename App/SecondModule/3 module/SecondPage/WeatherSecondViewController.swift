@@ -66,9 +66,15 @@ class WeatherSecondViewController : UIViewController {
 
 extension WeatherSecondViewController : ViewDelegateProtocol {
     func getData() {
+        guard let text = (presenter.object?.main?.temp) else {
+            welcomeLabel.text = "No Data"
+            tempLabel.text = "No Data"
+            image.image = #imageLiteral(resourceName: "Group 14")
+            return
+        }
         welcomeLabel.text = presenter.object?.weather?.first?.main
-        image.image = setWeather(time: "Day", weather: (presenter.object?.weather?.first?.main) ?? "")
-        let tempText = String(Int((presenter.object?.main?.temp)! - 273))
+        image.image = setWeather(time: "Day", weather: (presenter.object?.weather?.first?.main) ?? "No Data")
+        let tempText = String(Int((text) - 273))
         let temp = Int((presenter.object?.main?.temp)! - 273)
         
         if temp > 0 {

@@ -10,14 +10,13 @@ import UIKit
 class WeatherViewController : UIViewController {
     
     var presenter : SecondViewPresenterProtocol!
-
+    
     var flag = true
     
     private let welcomeLabel : UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 50)
         label.textColor = .white
-        label.text = "CLCCC"
         return label
     }()
     
@@ -25,7 +24,6 @@ class WeatherViewController : UIViewController {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 80)
         label.textColor = .white
-        label.text = "CLCCC"
         return label
     }()
     
@@ -43,6 +41,7 @@ class WeatherViewController : UIViewController {
     }()
     
     override func viewDidLoad() {
+        
         
         addLayout(label: welcomeLabel, image: image, button: button, tempLabel : tempLabel)
     }
@@ -63,18 +62,24 @@ class WeatherViewController : UIViewController {
         
     }
 }
-
 extension WeatherViewController : ViewDelegateProtocol {
     func getData() {
+        
+        guard let text = (presenter.object?.main?.temp) else {
+            welcomeLabel.text = "No Data"
+            tempLabel.text = "No Data"
+            image.image = #imageLiteral(resourceName: "Group 14")
+            return
+        }
         welcomeLabel.text = presenter.object?.weather?.first?.main
-        image.image = setWeather(time: "Day", weather: (presenter.object?.weather?.first?.main) ?? "")
-        let tempText = String(Int((presenter.object?.main?.temp)! - 273))
+        image.image = setWeather(time: "Day", weather: (presenter.object?.weather?.first?.main) ?? "No Data")
+        let tempText = String(Int((text) - 273))
         let temp = Int((presenter.object?.main?.temp)! - 273)
         
         if temp > 0 {
             tempLabel.text = "+\(tempText)"
         } else {
-            tempLabel.text = "-\(tempText)"
+            tempLabel.text = "\(tempText)"
         }
     }
 }

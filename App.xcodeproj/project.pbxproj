@@ -35,7 +35,6 @@
 		E7D2270128268645006CE562 /* UIKit + UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D2270028268645006CE562 /* UIKit + UIViewController.swift */; };
 		E7D2270728269DD0006CE562 /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D2270628269DD0006CE562 /* WeatherModel.swift */; };
 		E7D2270C2826B106006CE562 /* ViewDelegateProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D2270B2826B106006CE562 /* ViewDelegateProtocol.swift */; };
-		E7D227112826D75D006CE562 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D227102826D75D006CE562 /* Notifications.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,7 +89,6 @@
 		E7D2270028268645006CE562 /* UIKit + UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIKit + UIViewController.swift"; sourceTree = "<group>"; };
 		E7D2270628269DD0006CE562 /* WeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
 		E7D2270B2826B106006CE562 /* ViewDelegateProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewDelegateProtocol.swift; sourceTree = "<group>"; };
-		E7D227102826D75D006CE562 /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -306,7 +304,6 @@
 			children = (
 				E7B4194D282653C800247B54 /* SecondView.swift */,
 				E7D2270028268645006CE562 /* UIKit + UIViewController.swift */,
-				E7D227102826D75D006CE562 /* Notifications.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -509,7 +506,6 @@
 				E77796D927EB4172006564C0 /* AssemblyBuilder.swift in Sources */,
 				E777966927EB3FDB006564C0 /* SceneDelegate.swift in Sources */,
 				E721EE7128030D2A00D0A986 /* SecondViewController.swift in Sources */,
-				E7D227112826D75D006CE562 /* Notifications.swift in Sources */,
 				E79B274327EF7D6200DA72AC /* UserLocationManager.swift in Sources */,
 				E7B419382826465700247B54 /* ViewDelegate.swift in Sources */,
 				E7D2270128268645006CE562 /* UIKit + UIViewController.swift in Sources */,

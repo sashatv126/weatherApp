@@ -18,6 +18,8 @@ class SecondViewController : UIPageViewController  {
         setupPage()
         style()
         layout()
+        
+        
     }
 }
 
