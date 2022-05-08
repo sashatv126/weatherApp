@@ -2,6 +2,7 @@
 Alpha 1.0 
 MVP
 this app consists of getting the weather by location on the map. It implements work with MapKit, from which we receive information from the user and transmit it to the next screen, where the main request to the weather occurs
+
 ![Снимок экрана 2022-05-08 в 10 10 24](https://user-images.githubusercontent.com/99916289/167285913-6f0ebe61-12c7-4654-8010-a872b3983078.png)
 
 ![Снимок экрана 2022-05-08 в 10 11 12](https://user-images.githubusercontent.com/99916289/167285914-91eb74eb-e0ce-4393-8300-796968910e5e.png)
