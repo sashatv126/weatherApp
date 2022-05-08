@@ -15,7 +15,6 @@ this app consists of getting the weather by location on the map. It implements w
 
 
 Stack:
-
 MVP+Router
 RestAPI
 UIKit
