@@ -14,6 +14,11 @@ this app consists of getting the weather by location on the map. It implements w
 ![Снимок экрана 2022-05-08 в 10 05 19](https://user-images.githubusercontent.com/99916289/167285910-65acf7f5-739f-4ea5-9551-3e94a73fdad1.png)
 
 
+
+
+
+
+
 Stack:
 MVP+Router
 RestAPI
@@ -23,3 +28,8 @@ SOLID
 MapKit
 CoreLocation
 GCD
+
+
+
+
+
