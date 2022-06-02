@@ -23,6 +23,7 @@ class NetworkService : NetworkServiceProtocol {
                 let result = try JSONDecoder().decode(T.self, from: data!)
                 complition(.success(result))
             } catch {
+                debugPrint("eroro")
                 complition(.failure(error))
             }
         }.resume()

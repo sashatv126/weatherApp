@@ -8,11 +8,9 @@
 import Foundation
 import UIKit
 //add Router for navigation
-
 class Router: RouterProtocol {
     
     var assemblyBuider: AssemblyBuilderProtocol?
-    
     var nVC: UINavigationController?
     
     init(navigationController : UINavigationController, assebly : AssemblyBuilderProtocol ){

@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol MainViewProtocol : class {
+protocol MainViewProtocol : AnyObject {
     func success()
     func failure(error : Error)
 }

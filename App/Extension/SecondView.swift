@@ -9,8 +9,6 @@ import UIKit
 
 extension SecondViewController {
     
-     
-    
      func setupPage() {
         let assembly = AssemblyBuilder()
         
@@ -28,7 +26,6 @@ extension SecondViewController {
         pages.append(page3)
         
         setViewControllers([pages[initialPage]], direction: .forward, animated: true, completion: nil)
-        
         
     }
     

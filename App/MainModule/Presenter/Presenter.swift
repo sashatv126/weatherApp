@@ -8,7 +8,7 @@
 import Foundation
 import MapKit
 
-protocol MainViewPresenterProtocol : class {
+protocol MainViewPresenterProtocol : AnyObject {
     init(view : MainViewProtocol, router : RouterProtocol )
     func search(searchRequest : String?, map : MKMapView )
     func addGeo(map : MKMapView)
@@ -18,7 +18,6 @@ class MainPresenter : MainViewPresenterProtocol {
 
     weak var view : MainViewProtocol?
     var router : RouterProtocol?
-    
     
     required init(view: MainViewProtocol, router: RouterProtocol) {
         self.view = view
@@ -68,6 +67,4 @@ class MainPresenter : MainViewPresenterProtocol {
     func tap(coordinate: CoordinationModel?) {
         router?.showSecondSplash()
     }
-    
-    
 }

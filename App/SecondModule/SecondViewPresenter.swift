@@ -19,15 +19,10 @@ protocol SecondViewPresenterProtocol : AnyObject {
 class SecondViewPresenter : SecondViewPresenterProtocol{
     
     static var model : CoordinationModel?
-    
     var network : NetworkServiceProtocol!
-    
     weak var view : ViewDelegateProtocol!
-    
     var object: WeatherModel?
     
-    
-     
     required init(view: ViewDelegateProtocol, network: NetworkServiceProtocol) {
         self.network = network
         self.view = view
